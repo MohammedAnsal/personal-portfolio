@@ -7,21 +7,21 @@ const testimonials = [
       "Ansal takes real ownership of his work. He pays attention to details, writes clean code, and always tries to understand the problem deeply before jumping to a solution.",
     author: "Gokul",
     role: "Teammate / Developer",
-    avatar: "/public/peoples/gokul.jpg",
+    avatar: "/peoples/gokul.jpg",
   },
   {
     quote:
       "Working with Ansal was smooth and productive. He communicates clearly, adapts quickly to requirements, and consistently delivers reliable features.",
     author: "Minhaj",
     role: "MERN Devdloper",
-    avatar: "/public/peoples/Minhaj.jpg",
+    avatar: "/peoples/Minhaj.jpg",
   },
   {
     quote:
       "Ansal has a strong understanding of full-stack development and system flow. His focus on maintainable code and practical solutions made a real impact on our project.",
     author: "Akash",
     role: "Flutter Developer",
-    avatar: "/public/peoples/Akash.jpeg",
+    avatar: "/peoples/Akash.jpeg",
   },
 ];
 
