@@ -13,7 +13,7 @@ const testimonials = [
     quote:
       "Working with Ansal was smooth and productive. He communicates clearly, adapts quickly to requirements, and consistently delivers reliable features.",
     author: "Minhaj",
-    role: "MERN Devdloper",
+    role: "MERN Developer",
     avatar: "/peoples/Minhaj.jpg",
   },
   {
