@@ -1,8 +1,17 @@
-import type { ReactNode } from "react";
+import type { ReactNode, ButtonHTMLAttributes } from "react";
 
-export const AnimatedBorderButton = ({ children }: { children: ReactNode }) => {
+interface AnimatedBorderButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  children: ReactNode;
+}
+
+export const AnimatedBorderButton = ({ 
+  children, 
+  onClick,
+  ...props 
+}: AnimatedBorderButtonProps) => {
   return (
     <button
+      onClick={onClick}
       className="relative bg-transparent border border-border 
         text-foreground hover:border-primary/50 transition-all 
         duration-1000 focus:outline-none focus-visible:ring-2 
@@ -10,6 +19,7 @@ export const AnimatedBorderButton = ({ children }: { children: ReactNode }) => {
         disabled:opacity-50 disabled:cursor-not-allowed group 
         px-8 py-4 text-lg font-medium rounded-full overflow-visible 
         animated-border"
+      {...props}
     >
       {/* Animated SVG Border */}
       <svg
