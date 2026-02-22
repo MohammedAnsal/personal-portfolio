@@ -1,4 +1,5 @@
-import { Github, Linkedin, Instagram } from "lucide-react";
+import { Github, Linkedin, Instagram, ArrowUp } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const socialLinks = [
   { icon: Github, href: "https://github.com/MohammedAnsal", label: "GitHub" },
@@ -23,49 +24,75 @@ const footerLinks = [
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const [showTop, setShowTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setShowTop(window.scrollY > 300);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
-    <footer className="py-12 border-t border-border">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-          {/* Logo & Copyright */}
-          <div className="text-center md:text-left">
-            <a href="#" className="text-xl font-bold tracking-tight">
-              MA<span className="text-primary">.</span>
-            </a>
-            <p className="text-sm text-muted-foreground mt-2">
-              © {currentYear} Mohammed Ansal. All rights reserved.
-            </p>
-          </div>
+    <>
+      {/* Back to Top Button */}
+      <button
+        onClick={scrollToTop}
+        aria-label="Back to top"
+        className={`fixed bottom-8 right-8 z-50 p-3 rounded-full bg-primary text-primary-foreground shadow-lg shadow-primary/20 transition-all duration-300 hover:scale-110 hover:shadow-primary/40 ${
+          showTop
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-4 pointer-events-none"
+        }`}
+      >
+        <ArrowUp className="w-5 h-5" />
+      </button>
 
-          {/* Links */}
-          <nav className="flex flex-wrap justify-center gap-6">
-            {footerLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {link.label}
+      <footer className="py-12 border-t border-border">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+            {/* Logo & Copyright */}
+            <div className="text-center md:text-left">
+              <a href="#" className="text-xl font-bold tracking-tight">
+                MA<span className="text-primary">.</span>
               </a>
-            ))}
-          </nav>
+              <p className="text-sm text-muted-foreground mt-2">
+                © {currentYear} Mohammed Ansal. All rights reserved.
+              </p>
+            </div>
 
-          {/* Social Links */}
-          <div className="flex items-center gap-4">
-            {socialLinks.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                aria-label={social.label}
-                className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all"
-              >
-                <social.icon className="w-5 h-5" />
-              </a>
-            ))}
+            {/* Links */}
+            <nav className="flex flex-wrap justify-center gap-6">
+              {footerLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+
+            {/* Social Links */}
+            <div className="flex items-center gap-4">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  aria-label={social.label}
+                  className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all"
+                >
+                  <social.icon className="w-5 h-5" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </>
   );
 };
