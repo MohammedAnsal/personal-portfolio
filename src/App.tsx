@@ -3,7 +3,7 @@ import { Footer } from "../src/layouts/Footer";
 import { Hero } from "@/sections/Hero";
 import { About } from "@/sections/About";
 import { Projects } from "@/sections/Projects";
-// import { Experience } from "@/sections/Experience";
+import { Experience } from "@/sections/Experience";
 import { Testimonials } from "@/sections/Testimonials";
 import { Contact } from "@/sections/Contact";
 
@@ -15,7 +15,7 @@ function App() {
         <Hero />
         <About />
         <Projects />
-        {/* <Experience /> */}
+        <Experience />
         <Testimonials />
         <Contact />
       </main>
