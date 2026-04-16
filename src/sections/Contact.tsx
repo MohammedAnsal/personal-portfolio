@@ -222,7 +222,7 @@ export const Contact = () => {
 
           {/* Contact Info */}
           <div className="space-y-6 w-full flex flex-col animate-fade-in animation-delay-400">
-            <div className="glass rounded-3xl p-8 w-full">
+            <div className="glass rounded-3xl p-6 sm:p-8 w-full">
               <h3 className="text-xl font-semibold mb-6">
                 Contact Information
               </h3>
@@ -240,7 +240,10 @@ export const Contact = () => {
                       <div className="text-sm text-muted-foreground">
                         {item.label}
                       </div>
-                      <div className="font-medium wrap-break-word leading-relaxed">
+                      <div
+                        className="font-medium text-sm leading-relaxed whitespace-nowrap overflow-hidden text-ellipsis"
+                        title={item.value}
+                      >
                         {item.value}
                       </div>
                     </div>
@@ -250,7 +253,7 @@ export const Contact = () => {
             </div>
 
             {/* Status Card */}
-            <div className="glass rounded-3xl p-8 border border-primary/30 w-full">
+            <div className="glass rounded-3xl p-6 sm:p-8 border border-primary/30 w-full">
               <div className="flex flex-wrap items-center gap-3 mb-6">
                 <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse shrink-0" />
                 <h3 className="text-xl font-semibold">Currently working</h3>
