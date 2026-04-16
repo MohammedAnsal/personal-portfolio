@@ -108,7 +108,7 @@ export const Testimonials = () => {
   const getOpacity = () => (animState === "visible" ? 1 : 0);
 
   return (
-    <section id="testimonials" className="py-32 relative overflow-hidden">
+    <section id="testimonials" className="py-20 sm:py-32 relative overflow-hidden">
       {/* Ambient glow */}
       <div className="absolute top-1/2 left-1/2 w-200 h-200 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
 
@@ -138,7 +138,7 @@ export const Testimonials = () => {
           <div className="relative">
             {/* Card */}
             <div
-              className="glass p-8 rounded-3xl md:p-12 glow-border"
+              className="glass p-6 sm:p-8 md:p-12 rounded-3xl glow-border"
               style={{
                 transform: getTransform(),
                 opacity: getOpacity(),
@@ -152,7 +152,7 @@ export const Testimonials = () => {
                 <Quote className="w-6 h-6 text-primary-foreground" />
               </div>
 
-              <blockquote className="text-xl md:text-2xl font-medium leading-relaxed mb-8 pt-4">
+              <blockquote className="text-xl md:text-2xl font-medium leading-relaxed mb-6 sm:mb-8 pt-4">
                 "{testimonials[activeIdx].quote}"
               </blockquote>
 
@@ -160,7 +160,7 @@ export const Testimonials = () => {
                 <img
                   src={testimonials[activeIdx].avatar}
                   alt={testimonials[activeIdx].author}
-                  className="w-14 h-14 rounded-full object-cover ring-2 ring-primary/20"
+                  className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover ring-2 ring-primary/20"
                 />
                 <div>
                   <div className="font-semibold">

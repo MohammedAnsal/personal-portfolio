@@ -69,10 +69,10 @@ export const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-6 pt-28 pb-16 sm:pt-32 sm:pb-20 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Column - Text Content */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             <div className="animate-fade-in">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-primary">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
@@ -82,7 +82,7 @@ export const Hero = () => {
 
             {/* Headline */}
             <div className="space-y-4">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight animate-fade-in animation-delay-100">
                 Crafting <span className="text-primary glow-text">digital</span>
                 <br />
                 experiences with
@@ -91,7 +91,7 @@ export const Hero = () => {
                   precision.
                 </span>
               </h1>
-              <p className="text-lg text-muted-foreground max-w-lg animate-fade-in animation-delay-200">
+              <p className="text-base sm:text-lg text-muted-foreground max-w-md sm:max-w-lg animate-fade-in animation-delay-200">
                 Hi, I’m Mohammed Ansal — a Software Development Engineer (SDE)
                 with experience in the MERN stack. I build scalable, performant
                 web applications there with a focus on clean code and solid

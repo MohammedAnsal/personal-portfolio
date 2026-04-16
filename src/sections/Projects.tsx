@@ -79,7 +79,7 @@ const projects = [
 
 export const Projects = () => {
   return (
-    <section id="projects" className="py-32 relative overflow-hidden">
+    <section id="projects" className="py-20 sm:py-32 relative overflow-hidden">
       {/* Bg glows */}
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
@@ -112,7 +112,7 @@ export const Projects = () => {
               style={{ animationDelay: `${(idx + 1) * 100}ms` }}
             >
               {/* Image Container — fixed height, shows full image */}
-              <div className="relative overflow-hidden h-56 bg-card shrink-0">
+              <div className="relative overflow-hidden h-48 sm:h-56 bg-card shrink-0">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -122,8 +122,30 @@ export const Projects = () => {
                 {/* Subtle bottom fade so image blends into card */}
                 <div className="absolute inset-x-0 bottom-0 h-16 bg-linear-to-t from-card/80 to-transparent" />
 
+                {/* Mobile/Tablet: show icons without hover */}
+                <div className="absolute top-3 right-3 z-20 flex items-center gap-2 md:hidden">
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
+                    aria-label={`Open ${project.title} live demo`}
+                  >
+                    <ArrowUpRight className="w-4 h-4" />
+                  </a>
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
+                    aria-label={`Open ${project.title} GitHub`}
+                  >
+                    <Github className="w-4 h-4" />
+                  </a>
+                </div>
+
                 {/* Hover overlay with action buttons */}
-                <div className="absolute inset-0 bg-card/60 backdrop-blur-sm flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                <div className="hidden md:flex absolute inset-0 bg-card/60 backdrop-blur-sm items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-all duration-300">
                   <a
                     href={project.link}
                     target="_blank"
