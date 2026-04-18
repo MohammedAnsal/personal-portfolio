@@ -6,8 +6,11 @@ import { Projects } from "@/sections/Projects";
 import { Experience } from "@/sections/Experience";
 import { Testimonials } from "@/sections/Testimonials";
 import { Contact } from "@/sections/Contact";
+import { useLenis } from "@/hooks/useLenis";
 
 function App() {
+  useLenis();
+
   return (
     <div className="min-h-screen overflow-x-hidden">
       <Navbar />
