@@ -1,10 +1,27 @@
 const experiences = [
   {
     period: "2026 — Present",
+    role: "Full Stack Engineer",
+    company: "Matamix International Pvt Ltd",
+    description:
+      "Working as a Full Stack Engineer, contributing to the development and maintenance of modern SaaS and ERP-based web applications. Developing scalable backend services and RESTful APIs, building responsive frontend interfaces, and collaborating with the team to deliver efficient, secure, and high-quality solutions.",
+    technologies: [
+      "Next.js",
+      "NestJS",
+      "MySQL",
+      "Prisma",
+      "TypeScript",
+      "REST API",
+      "Git",
+    ],
+    current: true,
+  },
+  {
+    period: "2026",
     role: "Junior Developer · MERN Stack",
     company: "Tech Geum Private Limited",
     description:
-      "Working as a MERN stack developer: building and maintaining web apps with MongoDB, Express.js, React, and Node.js. Contributing to scalable solutions, supporting Zoho-related work when needed, and collaborating with the team on features and integrations.",
+      "Worked as a MERN stack developer, building and maintaining web applications using MongoDB, Express.js, React, and Node.js. Contributed to scalable solutions, supported Zoho-related work when needed, and collaborated with the team on features and integrations.",
     technologies: [
       "MongoDB",
       "Express.js",
@@ -13,7 +30,7 @@ const experiences = [
       "MERN",
       "Zoho",
     ],
-    current: true,
+    current: false,
   },
   {
     period: "2023 — 2025",
